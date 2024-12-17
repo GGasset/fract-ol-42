@@ -66,9 +66,9 @@ static int	parse_julia(t_render_data *args)
 	if (status == 1)
 		if (set_res(res, (t_res){0, 50}, (t_res){0, 300}, &args->args))
 			return (1);
+	construct(&args->julia);
 	i += ft_set_key(args->argv, "-cx", &julia->cx, f64) == 1;
 	i += ft_set_key(args->argv, "-cy", &julia->cy, f64) == 1;
-	construct(&args->julia);
 	args->args.zoom_mov_x = .1;
 	args->args.zoom_mov_y = .1;
 	return ((size_t)args->argc - 2 != i);
